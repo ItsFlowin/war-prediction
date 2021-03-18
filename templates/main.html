@@ -19,20 +19,20 @@ form {
 <form action="{{ url_for('main') }}" method="POST">
     <fieldset>
         <legend>Input values:</legend>
-        Age:
-        <input name="age" type="number" required>
-        <br>
-        <br> Salary:
+        Salary:
         <input name="salary" type="number" required>
         <br>
         <br> Percent Contract Complete:
         <input name="contract" type="number" required>
         <br>
-        <br> DL Movements:
-        <input name="dl" type="number" required>
-        <br>
         <br> Team Win Percentage:
         <input name="wins" type="number" required>
+        <br>
+        <br> Age:
+        <input name="age" type="number" required>
+        <br>
+        <br> Number Dl Trips:
+        <input name="dl" type="number" required>
         <br>
         <input type="submit">
     </fieldset>
@@ -44,7 +44,7 @@ form {
     		<b>{{ variable }}</b> : {{ value }}
     	{% endfor %}
 		<br>
-    	<br> Predicted number of bikes in use:
+    	<br> Predicted WAR Value:
    		<p style="font-size:50px">{{ result }}</p>
     {% endif %}
 </div>
