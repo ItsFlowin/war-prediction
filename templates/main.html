@@ -50,14 +50,13 @@ input:valid+span:after {
     <fieldset>
         <legend>Input values:</legend>
         Salary:
-        <input name="salary" type="number" minlength="6" maxlength="9" size="10" required>
-        <span class="validity"></span>
+        <input name="salary" type="number" min="100000" max="1000000000" required>
         <br>
-        <br> Percent Contract Complete:
-        <input name="contract" type="number" min = "0" max="100" maxlength="2" size="3" placeholder="Enter a whole number 1-100" required>
+        <br> Percent Contract Complete(1-100):
+        <input name="contract" type="number" min = "0" max="100" pattern="([0-9]|[0-9]|[0-9])" size="3" required>
         <br>
-        <br> Team Win Percentage:
-        <input name="wins" type="number" min ="0" max="100" size="3" required>
+        <br> Team Win Percentage(1-100):
+        <input name="wins" type="number" min ="0" max="100" size="3" pattern="([0-9]|[0-9]|[0-9])" required>
         <br>
         <br> Age:
         <input name="age" type="number" maxlength="2" min="0" size="2" required>
