@@ -13,6 +13,7 @@ app = flask.Flask(__name__, template_folder='templates')
 # Set up the main route
 @app.route('/', methods=['GET', 'POST'])
 def main():
+    input_variables=pd.DataFrame()
     if flask.request.method == 'GET':
         # Just render the initial form, to get input
         return(flask.render_template('main.html'))
