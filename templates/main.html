@@ -17,7 +17,23 @@ h1{
     color: white;
     padding-top: 150px;
 }
+input+span {
+    padding-right: 30px;
+}
 
+input:invalid+span:after {
+    position: absolute;
+    content: '✖';
+    padding-left: 5px;
+    color: red;
+}
+
+input:valid+span:after {
+    position: absolute;
+    content: '✓';
+    padding-left: 5px;
+    color: rgb(10, 241, 10);
+}
 </style>
 
 <head>
@@ -34,20 +50,21 @@ h1{
     <fieldset>
         <legend>Input values:</legend>
         Salary:
-        <input name="salary" type="number" required>
+        <input name="salary" type="number" minlength="6" maxlength="9" size="10" required>
+        <span class="validity"></span>
         <br>
         <br> Percent Contract Complete:
-        <input name="contract" type="number" required>
+        <input name="contract" type="number" min = "0" max="100" maxlength="2" size="3" placeholder="Enter a whole number 1-100" required>
         <br>
         <br> Team Win Percentage:
-        <input name="wins" type="number" required>
+        <input name="wins" type="number" min ="0" max="100" size="3" required>
         <br>
         <br> Age:
-        <input name="age" type="number" required>
+        <input name="age" type="number" maxlength="2" min="0" size="2" required>
         <br>
         <br> Number Dl Trips:
-        <input name="dl" type="number" required>
-        <br>
+        <input name="dl" type="number" min="0" maxlength="2" size="2" required>
+        <br><br>
         <input type="submit">
     </fieldset>
 </form>
