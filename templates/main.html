@@ -14,20 +14,25 @@ form {
 </style>
 
 <head>
-    <title>Bike Usage Model</title>
+    <title>WAR Predictor</title>
 </head>
 <form action="{{ url_for('main') }}" method="POST">
     <fieldset>
         <legend>Input values:</legend>
-        Temperature:
-        <input name="temperature" type="number" required>
+        Age:
+        <input name="age" type="number" required>
         <br>
-        <br> Humidity:
-        <input name="humidity" type="number" required>
+        <br> Salary:
+        <input name="salary" type="number" required>
         <br>
-        <br> Windspeed:
-        <input name="windspeed" type="number" required>
+        <br> Percent Contract Complete:
+        <input name="contract" type="number" required>
         <br>
+        <br> DL Movements:
+        <input name="dl" type="number" required>
+        <br>
+        <br> Team Win Percentage:
+        <input name="wins" type="number" required>
         <br>
         <input type="submit">
     </fieldset>

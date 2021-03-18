@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 
 # Use pickle to load in the pre-trained model
-with open(f'model/bike_model_xgboost.pkl', 'rb') as f:
+with open(f'model/WAR_pickle.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Initialise the Flask app
@@ -18,13 +18,15 @@ def main():
     
     if flask.request.method == 'POST':
         # Extract the input
-        temperature = flask.request.form['temperature']
-        humidity = flask.request.form['humidity']
-        windspeed = flask.request.form['windspeed']
+        age = flask.request.form['age']
+        salary = flask.request.form['salary']
+        contract = flask.request.form['contract']
+        dl = flask.request.form['dl']
+        wins = flask.request.form['wins']
 
         # Make DataFrame for model
-        input_variables = pd.DataFrame([[temperature, humidity, windspeed]],
-                                       columns=['temperature', 'humidity', 'windspeed'],
+        input_variables = pd.DataFrame([[age, salary, contract, dl, wins]],
+                                       columns=['age', 'salary', 'contract','dl', 'wins'],
                                        dtype=float,
                                        index=['input'])
 
@@ -34,9 +36,11 @@ def main():
         # Render the form again, but add in the prediction and remind user
         # of the values they input before
         return flask.render_template('main.html',
-                                     original_input={'Temperature':temperature,
-                                                     'Humidity':humidity,
-                                                     'Windspeed':windspeed},
+                                     original_input={'Age':age,
+                                                     'Salary':salary,
+                                                     'Contract Value':contract,
+                                                     'DL Trips':dl,
+                                                     'Team Win Percentage':wins},
                                      result=prediction,
                                      )
 
