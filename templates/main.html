@@ -11,11 +11,25 @@ form {
     width: 35%;
     border: 1px solid #ccc;
 }
+
+h1{
+    text-align: center;
+    color: white;
+    padding-top: 150px;
+}
+
 </style>
 
 <head>
     <title>WAR Predictor</title>
 </head>
+<body>
+    <div class="wrapper" style="background-image: url('https://i.ibb.co/RbQt9Q1/baseball-2617310.jpg');
+    background-size: cover; background-position: center; color: white; margin:auto; width: 35%; height: 500px;">
+    <h1>WAR Predictor</h1>
+    </div>
+
+</body>
 <form action="{{ url_for('main') }}" method="POST">
     <fieldset>
         <legend>Input values:</legend>
