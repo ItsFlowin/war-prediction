@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 # Use pickle to load in the pre-trained model
-with open(f'model/WAR_pickle.pkl', 'rb') as f:
+with open(f'model/WAR_Pickle.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Initialise the Flask app
