@@ -49,20 +49,20 @@ input:valid+span:after {
 <form action="{{ url_for('main') }}" method="POST">
     <fieldset>
         <legend>Input values:</legend>
-        Salary:
-        <input name="salary" type="number" min="100000" max="50000000" required>
+        Salary(296,000 - 40M):
+        <input name="salary" type="number" min="290000" max="40000000" required>
         <br>
         <br> Percent Contract Complete(1-100):
         <input name="contract" type="number" min = "0" max="100" pattern="([0-9]|[0-9]|[0-9])" size="3" required>
         <br>
-        <br> Team Win Percentage(1-100):
-        <input name="wins" type="number" min ="0" max="100" size="3" pattern="([0-9]|[0-9]|[0-9])" required>
+        <br> Team Win Percentage(26-72):
+        <input name="wins" type="number" min ="26" max="72" size="2" pattern="([0-9]|[0-9])" required>
         <br>
-        <br> Age:
-        <input name="age" type="number" min="0" max="50" size="2" required>
+        <br> Age (19-44):
+        <input name="age" type="number" min="19" max="44" size="2" required>
         <br>
-        <br> Number Dl Trips:
-        <input name="dl" type="number" min="0" max="20" size="2" required>
+        <br> Number Dl Trips (0-5):
+        <input name="dl" type="number" min="0" max="5" size="1" required>
         <br><br>
         <input type="submit">
     </fieldset>
