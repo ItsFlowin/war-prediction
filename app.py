@@ -33,10 +33,10 @@ def main():
                                        index=['input'])
 
         # Transform Data into proper format for the model
-        #input_variables['age'] = input_variables['age'].apply(lambda x: (x-18))
-        #input_variables['salary'] = input_variables['salary'].apply(lambda x:np.log(x))
-        #input_variables['contract'] *= 0.01 
-        #input_variables['wins'] *= 0.01
+        input_variables['age'] = input_variables['age'].apply(lambda x: (x-18))
+        input_variables['salary'] = input_variables['salary'].apply(lambda x:np.log(x))
+        input_variables['contract'] *= 0.01 
+        input_variables['wins'] *= 0.01
 
         # Get the model's prediction
         prediction = model.predict(input_variables)[0]
@@ -49,7 +49,7 @@ def main():
                                                      'Team Win Percentage':wins,
                                                      'Age':age,
                                                      'DL Trips':dl},
-                                     result=prediction,
+                                     result=prediction, form_reuse=input_variables,
                                      )
 
 if __name__ == '__main__':
